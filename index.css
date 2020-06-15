@@ -558,17 +558,11 @@ footer p span{
     .intro{
         width: 100%;
     }
-    .about-container .qualities{
-        display: grid;
-        grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
-        align-items: center; 
-        justify-content: center;
-        grid-gap: 40px;
-        color: #ffffff;
-        max-width: 80%;
-    }
     .about p{
         width: 100%;
+    }
+    .quality{
+        margin-left: 50px;
     }
     .projects{
         display: flex;
