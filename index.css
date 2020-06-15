@@ -553,11 +553,7 @@ footer p span{
 ::-webkit-scrollbar-track{
     background: linear-gradient(#d3d923,rgb(255, 0, 0));
 }
-@media screen and (max-width:550px){
-    .quality{
-        margin-left: 120px;
-    }
-}
+
 @media screen and (max-width:865px){
     .intro{
         width: 100%;
