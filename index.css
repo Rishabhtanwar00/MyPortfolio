@@ -362,21 +362,24 @@ header nav ul a li{
 }
 .project .front .title{
     position: relative;
-    padding: 20px;
+    padding: 5px 13px;
     font-weight: normal;
 }
 .projectimage{
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 250px;
+    height: 210px;
     width: 300px;
+}
+.project .front .tech{
+    padding: 0 13px;
 }
 .project .content{
     position: relative;
-    top: -230px;
+    top: -235px;
     max-width: 300px;
-    padding: 20px;
+    padding: 10px;
     opacity: 0;
 }
 .project .content .title{
@@ -496,6 +499,19 @@ form{
     color: #ffffff;
     cursor: pointer;
     text-decoration: none;
+}
+.aftersubmit{
+    position: relative;
+    top: 20px;
+
+}
+.onsubmit{
+    position: relative;
+    float: right;
+    top: -20px;
+    right: 57px;
+    background: #08a2b6 ;
+    padding: 3px 8px;
 }
 footer{
     width: 100%;
