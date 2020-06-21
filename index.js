@@ -33,15 +33,12 @@ let container = document.querySelector(
 );
 let submit = document.querySelector('.submit');
 submit.addEventListener('click', () => {
-  var c = (container.innerHTML = `
+  container.innerHTML = `
    <div class="submit-container">
    <p class="onsubmit">Your message has been sent!Thank you :)</p>
    <a class="aftersubmit submit">Submit</a>
    </div> 
-   `);
-  setTimeout(() => {
-    c.remove();
-  }, 1000);
+   `;
 });
 
 var hamgurger = document.querySelector('.hamburger');
