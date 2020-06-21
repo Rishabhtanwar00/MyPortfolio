@@ -588,7 +588,7 @@ footer p span {
   .hamburger {
     position: absolute;
     float: right;
-    right: 20px;
+    right: 10px;
     height: 70px;
     width: 70px;
     display: flex;
@@ -603,7 +603,7 @@ footer p span {
     width: 30px;
     background: #ffffff;
     border-radius: 10px;
-    transition: 0.3s all linear;
+    transition: 0.1s all linear;
   }
   .hamburger .line::before,
   .hamburger .line::after {
@@ -612,7 +612,7 @@ footer p span {
     height: 5px;
     background: #ffffff;
     border-radius: 10px;
-    transition: 0.3s all linear;
+    transition: 0.1s all linear;
     right: 0px;
   }
   .hamburger .line::before {
@@ -624,22 +624,22 @@ footer p span {
     width: 15px;
   }
   .hamburger.open .line {
-    transform: translateX(50px);
+    transform: translateX(10px);
     background: transparent;
   }
   .hamburger.open .line::before {
-    transform: rotate(-45deg);
+    transform: rotate(-45deg) translate(30px, 30px);
     width: 30px;
     right: 50px;
   }
   .hamburger.open .line::after {
-    transform: rotate(45deg);
+    transform: rotate(45deg) translate(30px, -30px);
     width: 30px;
     right: 50px;
   }
   .nav-links.open {
     opacity: 1;
-    transition: 0.5s all ease-in;
+    transition: 0.3s all ease-in;
     clip-path: circle(500px at 50% 50%);
   }
   .nav-links {
@@ -652,7 +652,7 @@ footer p span {
     width: 100%;
     top: -70px;
     height: 400px;
-    transition: 0.5s all ease-in-out;
+    transition: 0.3s all ease-in-out;
     background: linear-gradient(to left, #d3d923, rgb(255, 0, 0));
   }
   .intro {
@@ -705,11 +705,11 @@ footer p span {
     top: -5px;
   }
   .onsubmit {
-    font-size: 15px;
+    font-size: 13px;
     position: relative;
     float: right;
     top: -20px;
-    right: 40px;
+    right: 10px;
     background: #08a2b6;
     padding: 3px 8px;
   }
