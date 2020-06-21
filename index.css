@@ -153,7 +153,7 @@ header nav ul a li {
   justify-content: center;
   grid-gap: 40px;
   color: #ffffff;
-  max-width: 80%;
+  max-width: 90%;
 }
 .about-container .quality {
   height: 300px;
@@ -486,6 +486,8 @@ form {
   justify-content: flex-start;
 }
 .contact-container .textareainput textarea {
+  height: 160px;
+  width: 50vw;
   margin: 10px 20px;
   padding: 10px;
   color: white;
@@ -530,18 +532,18 @@ footer {
   color: #6b6b6b;
   letter-spacing: 1px;
 }
-footer a i {
+.upwards {
   position: relative;
-  font-size: 30px;
-  padding: 20px 20px;
-  top: -70px;
+  font-size: 20px;
+  padding: 10px;
+  top: -60px;
   color: #1b242f;
   background: #ffffff;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 footer .social-icons {
   position: relative;
-  top: 0px;
+  top: -30px;
   display: flex;
   align-items: center;
   justify-content: center;
