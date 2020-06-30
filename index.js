@@ -63,3 +63,7 @@ hamgurger.addEventListener('click', () => {
     menuOpen = false;
   }
 });
+
+function preloader() {
+  document.querySelector('.loader').style.display = 'none';
+}
