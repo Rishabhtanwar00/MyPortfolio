@@ -85,7 +85,10 @@ header nav ul a li {
   color: #00e1ff;
   text-decoration: none;
   animation: pointer 2.5s linear infinite;
+  background: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
 @keyframes pointer {
   0% {
     top: 0;

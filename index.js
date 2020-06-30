@@ -31,14 +31,20 @@ for (let i = 0; i < card.length; i++) {
 let container = document.querySelector(
   '.contact-container form .submit-container'
 );
+
 let submit = document.querySelector('.submit');
+
 submit.addEventListener('click', () => {
   container.innerHTML = `
    <div class="submit-container">
    <p class="onsubmit">Your message has been sent!Thank you :)</p>
-   <a class="aftersubmit submit">Submit</a>
+   <input class="submit aftersubmit" type="submit" />
    </div> 
    `;
+  setTimeout(function () {
+    container.innerHTML = `<input class="submit" type="submit" />`;
+  }, 4000);
+  document.getElementById('myform').reset();
 });
 
 var hamgurger = document.querySelector('.hamburger');
