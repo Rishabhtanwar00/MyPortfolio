@@ -15,39 +15,7 @@ body {
   background-size: cover;
   overflow-x: hidden;
 }
-.loader {
-  height: 100vh;
-  width: 100%;
-  background: #eb0606;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.preloadersvg {
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  display: inline-block;
-  animation: translation 2s ease-in-out infinite;
-  transition: 0.5s linear;
-}
-@keyframes translation {
-  0% {
-    transform: scale3D(1, 1, 1);
-  }
-  30% {
-    transform: scale3D(0.9, 0.9, 1.3);
-  }
-  60% {
-    transform: scale3D(1.2, 1.2, 1.1);
-  }
-  90% {
-    transform: scale3D(0.9, 0.9, 1.3);
-  }
-  100% {
-    transform: scale3D(0.99, 0.99, 1.01);
-  }
-}
+
 header {
   width: 100%;
   height: 70px;

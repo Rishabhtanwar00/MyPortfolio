@@ -64,6 +64,9 @@ hamgurger.addEventListener('click', () => {
   }
 });
 
+setTimeout();
 function preloader() {
-  document.querySelector('.loader').style.display = 'none';
+  setTimeout(function () {
+    document.querySelector('.loader').style.display = 'none';
+  }, 4200);
 }
