@@ -4953,8 +4953,7 @@
 
 .loader .loadtext {
   position: absolute;
-  top: 62%;
-  left: 44%;
+  margin-top: 80px;
   display: inline-flex;
   font-family: 'Raleway', sans-serif;
 }
