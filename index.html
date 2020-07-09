@@ -22,8 +22,8 @@
     />
     <title>findRishabh.com</title>
   </head>
-  <body onload="preloader()">
-    <div class="loader">
+  <body>
+    <div class="loader" id="preloader">
       <svg
         class="preloadersvg"
         xmlns="http://www.w3.org/2000/svg"
@@ -103,6 +103,7 @@
           <a href="#contact"><li class="link">Contact</li></a>
         </ul>
       </nav>
+      <div class="afterload">
     </header>
     <div class="intro">
       <div class="content">
@@ -442,7 +443,7 @@
       <span class="line" data-aos="zoom-out"
         >Have a question or want to work together?</span
       >
-      <form id="myform" data-aos="zoom-out" action="index.html">
+      <form id="form" data-aos="zoom-out" action="index.html">
         <div class="inputs" data-aos="fade-down" data-aos-delay="300">
           <label for="name">Name: </label>
           <input id="name" class="name-input" id="name" type="text" />

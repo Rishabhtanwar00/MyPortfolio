@@ -31,20 +31,18 @@ for (let i = 0; i < card.length; i++) {
 let container = document.querySelector(
   '.contact-container form .submit-container'
 );
-
-let submit = document.querySelector('.submit');
-
-submit.addEventListener('click', () => {
+let form = document.querySelector('#form');
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
   container.innerHTML = `
-   <div class="submit-container">
-   <p class="onsubmit">Your message has been sent!Thank you :)</p>
-   <input class="submit aftersubmit" type="submit" />
-   </div> 
-   `;
+    <div class="submit-container">
+    <p class="onsubmit">Your message has been sent!Thank you :)</p>
+    <input class="submit aftersubmit" type="submit" />
+    </div>
+    `;
   setTimeout(function () {
-    container.innerHTML = `<input class="submit" type="submit" />`;
+    document.querySelector('.onsubmit').style.display = 'none';
   }, 4000);
-  document.getElementById('myform').reset();
 });
 
 var hamgurger = document.querySelector('.hamburger');
@@ -64,8 +62,4 @@ hamgurger.addEventListener('click', () => {
   }
 });
 
-function preloader() {
-  setTimeout(function () {
-    document.querySelector('.loader').style.display = 'none';
-  }, 4200);
-}
+let loader = document.querySelector('.loader');
