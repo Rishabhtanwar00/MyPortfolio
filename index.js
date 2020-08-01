@@ -61,5 +61,3 @@ hamgurger.addEventListener('click', () => {
     menuOpen = false;
   }
 });
-
-let loader = document.querySelector('.loader');
