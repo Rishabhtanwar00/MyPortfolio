@@ -487,7 +487,7 @@ form {
 .contact-container .textareainput textarea {
   height: 160px;
   width: 50vw;
-  margin: 10px 20px;
+  margin: 10px 20px 0px ;
   padding: 10px;
   color: white;
   font-size: 17px;
@@ -498,8 +498,6 @@ form {
 }
 .contact-container .submit {
   position: relative;
-  left: 44%;
-  margin-right: 50px;
   padding: 5px 10px;
   font-size: 18px;
   outline: none;
@@ -508,18 +506,34 @@ form {
   color: #ffffff;
   cursor: pointer;
   text-decoration: none;
+  margin-top: 5px;
 }
-.aftersubmit {
-  position: relative;
-  top: 20px;
+.submit-container{
+  display:flex;
+  flex-direction:column;
+  align-items: center ;
+  justify-content: center;
 }
-.onsubmit {
+.onsubmit{
+  width: 46vw;
+  display:flex;
+  align-items: center ;
+  justify-content: space-between;
+  background: #08a2b6;
+  font-size: 15px;
+  padding: 0px 10px;
+  margin-top: -15px;
+}
+
+.onsubmit p {
   position: relative;
   float: right;
-  top: -20px;
-  right: 57px;
-  background: #08a2b6;
-  padding: 3px 8px;
+}
+.onsubmit i{
+  font-size: 20px;
+  position: relative;
+  top: 0px;
+  background: transparent;
 }
 footer {
   width: 100%;
@@ -700,18 +714,14 @@ footer p span {
     height: 160px;
     width: 70vw;
   }
-  .aftersubmit {
-    position: relative;
-    top: -5px;
+  .onsubmit{
+    width: 65vw;
   }
-  .onsubmit {
-    font-size: 13px;
-    position: relative;
-    float: right;
-    top: -20px;
-    right: 10px;
-    background: #08a2b6;
-    padding: 3px 8px;
+  .onsubmit p{
+     font-size: 13px;
+  }
+  .onsubmit i{
+    font-size: 15px;
   }
   footer .social-icons i {
     font-size: 20px;

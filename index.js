@@ -36,13 +36,16 @@ form.addEventListener('submit', function (e) {
   e.preventDefault();
   container.innerHTML = `
     <div class="submit-container">
-    <p class="onsubmit">Your message has been sent!Thank you :)</p>
+      <div class=onsubmit>
+        <p>Your message has been sent!Thank you :)</p>
+        <i class="fas fa-times" ></i>
+      </div>
     <input class="submit aftersubmit" type="submit" />
     </div>
     `;
   setTimeout(function () {
     document.querySelector('.onsubmit').style.display = 'none';
-  }, 4000);
+  }, 2000);
 });
 
 var hamgurger = document.querySelector('.hamburger');
