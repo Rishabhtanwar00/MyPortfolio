@@ -385,6 +385,10 @@ header nav ul a li {
 .project .front .tech {
   padding: 0 13px;
 }
+.project .front .tech span{
+  font-size: 19px;
+  color: #fff;
+}
 .project .content {
   position: relative;
   top: -235px;
@@ -411,7 +415,12 @@ header nav ul a li {
   color: white;
   outline: none;
   border: none;
+  transition: 0.3s ease-in;
   cursor: pointer;
+}
+.project .content button:active,.project .content button:hover{
+  transform: scale(0.95);
+  transition: 0.3s ease-in;
 }
 .project .content .buttons {
   display: flex;
@@ -422,6 +431,60 @@ header nav ul a li {
 .project .content .viewsourcecode {
   background-color: rgba(255, 8, 0, 0.794);
 }
+.blog-container{
+  padding-bottom: 60px;
+  width: 100%;
+  background: linear-gradient(to right, rgb(248, 24, 99), rgb(53, 248, 4));
+}
+.blogs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 100%;
+}
+.blog{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 500px;
+  margin: 30px;
+  color: rgb(255, 255, 255);
+  box-shadow: -6px 6px 10px rgba(0, 0, 0, 1),
+     6px -6px 20px rgba(0, 0, 0, 0.1);
+}
+.blogs a{
+  text-decoration: none;
+}
+.blog img{
+  width: 500px;
+  height: 250px;
+}
+.blog .title{
+  padding: 10px 15px;
+  letter-spacing: 2px;
+  color: rgb(0, 0, 0);
+}
+.blog p{
+  padding: 5px 15px;
+  font-size: 18px;
+  color: #000;
+  font-weight: 600;
+}
+.blog .simpleline{
+  margin: 5px 15px;
+  width: 80px;
+  height: 4px;
+  background: rgb(0, 0, 0);
+  opacity: 0.8;
+}
+.blog .description{
+  padding: 5px 15px 15px ;
+  letter-spacing: 1px;
+  color: #000;
+  font-weight: normal;
+}
+
 .contact-container {
   display: flex;
   flex-direction: column;
@@ -705,6 +768,12 @@ footer p span {
   .image {
     height: 200px;
     width: 200px;
+  }
+  .blogs{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
   }
   form {
     height: 400px;
