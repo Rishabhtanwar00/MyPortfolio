@@ -29,7 +29,7 @@ header nav ul {
 header nav ul a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 28px;
 }
 header nav ul a:hover {
   color: #000000;
@@ -47,35 +47,105 @@ header nav ul a li {
   align-items: center;
   justify-content: space-between;
   margin: 40px 0px 40px 10vw;
-  color: #ffffff;
+  color: #fff;
   letter-spacing: 4px;
   font-size: 20px;
 }
 .intro .content p {
   margin-top: 10px;
 }
-.intro .content span {
+.intro .content h1{
+  font-size: 1.8em;
+}
+.intro .content div {
   color: rgb(255, 0, 0);
   font-size: 2em;
   font-weight: 900;
 }
-.intro .content .btn {
+.animated-button {
+  display: inline-block;
   padding: 10px 20px;
-  margin: 30px 0 0 3px;
-  background: transparent;
-  outline: none;
-  color: #ffffff;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 180% 200% 180% 200% / 10% 20% 10% 20%;
-  cursor: pointer;
-  font-size: 17px;
+  margin: 30px auto;
+  border-radius: 1px;
+  color: #fff;
+  font-size: 20px;
   letter-spacing: 2px;
-  box-shadow: -3px -3px 3px rgba(255, 255, 255, 0.5),
-    3px 3px 3px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  border: 2px solid #fff;
+  opacity: 0;
+  animation: fade 0.2s ease-in 1.5s forwards;
+  box-shadow: -2px -2px 3px rgba(255,255,255,0.9),
+               3px 3px 5px rgba(0,0,0,0.05);
 }
+@keyframes fade{
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animated-button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ff7700;
+  border-radius: 0px;
+  outline: none;
+  z-index: -2;
+}
+.animated-button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(4, 247, 255);
+  transition: all 0.3s;
+  border-radius: 0px;
+  z-index: -1;
+}
+.animated-button:hover {
+  color: #000;
+  border: 2px solid #000;
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.9),
+               3px 3px 5px rgba(255,255,255,0.05);
+  outline: none;
+}
+.animated-button:hover:before {
+  width: 100%;
+}
+
 .image {
   height: 300px;
   width: 300px;
+  animation: upward 3s ease-in 0s forwards;
+  opacity: 0;
+}
+@keyframes upward{
+  0%{
+      transform: translateY(50px);
+      opacity: 0;
+  }
+  50%{
+      opacity: 0.5;
+  }
+  100%{
+    transform: translateY(0px);
+      opacity: 1;
+  }
 }
 .arrow {
   position: relative;
@@ -85,8 +155,9 @@ header nav ul a li {
   justify-content: center;
   color: #00e1ff;
   text-decoration: none;
-  animation: pointer 2.5s linear infinite;
+  animation: pointer 2.5s linear infinite,opac 0.2s linear 2s forwards;
   background: none;
+  opacity: 0;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
@@ -108,6 +179,14 @@ header nav ul a li {
   }
   100% {
     top: 0;
+  }
+}
+@keyframes opac{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
 .about-container {
@@ -670,7 +749,7 @@ footer p span {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 1;
+    z-index: 1000;
   }
   .hamburger .line {
     position: absolute;
@@ -679,6 +758,16 @@ footer p span {
     background: #ffffff;
     border-radius: 10px;
     transition: 0.1s all linear 0.05s;
+    animation: fall 0.5s linear;
+  }
+  @keyframes fall {
+    from{
+      transform: translateY(-700px);
+    }
+    to{
+      transform: translateY(0px);
+    }
+    
   }
   .hamburger .line::before,
   .hamburger .line::after {
@@ -693,10 +782,32 @@ footer p span {
   .hamburger .line::before {
     transform: translateY(-10px);
     width: 45px;
+    animation: fall1 0.2s linear ;
+    animation-delay: 0.4s;
+  }
+  @keyframes fall1 {
+    from{
+      transform: translateY(-700px);
+    }
+    to{
+      transform: translateY(-10px);
+    }
+    
   }
   .hamburger .line::after {
     transform: translateY(10px);
     width: 15px;
+    animation-delay: 0s;
+    animation: fall2 0.1s linear;
+  }
+  @keyframes fall2 {
+    from{
+      transform: translateY(-700px);
+    }
+    to{
+      transform: translateY(10px);
+    }
+    
   }
   .hamburger.open .line {
     transform: translateX(10px);
@@ -729,18 +840,26 @@ footer p span {
     height: 400px;
     transition: 0.3s all ease-in-out;
     background: linear-gradient(to left, #d3d923, rgb(255, 0, 0));
+    z-index: 1;
   }
   .intro {
     width: 100%;
     font-size: 15px;
     margin: 40px 0px 40px 8vw;
   }
-  .intro .content span {
-    font-size: 1.5em;
+  .intro .content h1 {
+    font-size: 22px;
+  }
+  .intro .content div {
+    font-size: 25px;
   }
   .intro .content .btn {
     padding: 5px 10px;
     font-size: 15px;
+    border: 1px solid #fff;
+  }
+  .intro .content .btn:hover{
+    border: 1px solid #000;
   }
   .about p {
     width: 100%;
