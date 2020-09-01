@@ -423,19 +423,18 @@ header nav ul a li {
 }
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fill,minmax(460px,1fr));
   align-items: center;
   justify-content: center;
-  grid-gap: 40px;
+  grid-gap: 20px;
   color: #ffffff;
-  margin: 10px 0px 50px 12vw;
-  max-width: 80%;
+  margin: auto 50px;
+  max-width: 100%;
 }
 .project {
   box-sizing: border-box;
-  height: 350px;
-  width: 300px;
-  padding: 0 10px;
+  height: 300px;
+  width: 450px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -444,67 +443,169 @@ header nav ul a li {
   box-shadow: 4px 2px;
   box-shadow: -6px -6px 10px rgba(0, 0, 0, 1),
     inset -6px -6px 20px rgba(0, 0, 0, 0.1);
-}
-.project .front {
-  opacity: 1;
-  font-size: 23px;
-}
-.project .front .title {
   position: relative;
-  padding: 5px 13px;
-  font-weight: normal;
+  transition: border-radius 1s ease-out;
+  z-index: 1;
+}
+.project:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s;
+  border-radius: 0px;
+  z-index: -1;
+}
+
+.project:hover::before{
+  height: 100%;
+}
+.project:nth-child(1):hover{
+  border-radius: 200% 200% 200% 00%/ 200% 200% 200% 200%;
+  box-shadow: inset -6px -6px 0px rgba(0, 0, 0, 1),
+    inset -6px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.project:nth-child(2):hover{
+  border-radius: 200% 200% 200% 200%/ 200% 200% 200% 200%;
+  box-shadow: inset -6px -6px 0px rgba(0, 0, 0, 1),
+    inset 6px -6px 0px rgba(0, 0, 0, 0.5);
+}
+.project:nth-child(3):hover{
+  border-radius: 200% 200% 00% 200%/ 200% 200% 200% 200%;
+  box-shadow: inset 6px -6px 0px rgba(0, 0, 0, 1),
+    inset 6px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.project:nth-child(4):hover{
+  border-radius: 200% 200% 200% 00%/ 200% 200% 200% 200%;
+  box-shadow: inset -6px -6px 0px rgba(0, 0, 0, 1),
+  inset -6px 6px 0px rgba(0, 0, 0, 0.5);
+}
+.project:nth-child(5):hover{
+  border-radius: 200% 200% 00% 200%/ 200% 200% 200% 200%;
+  box-shadow: inset 6px -6px 0px rgba(0, 0, 0, 1),
+  inset 6px 6px 0px rgba(0, 0, 0, 0.5);
 }
 .projectimage {
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 210px;
-  width: 300px;
-}
-.project .front .tech {
-  padding: 0 13px;
-}
-.project .front .tech span{
-  font-size: 19px;
-  color: #fff;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
 }
 .project .content {
+  color: #000;
   position: relative;
-  top: -235px;
-  max-width: 300px;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  top: -280px;
   opacity: 0;
+  padding: 20px;
+  transition: opacity 0.3s ease-in 0.3s;
 }
-.project .content .title {
-  position: relative;
-  font-size: 28px;
-  padding: 10px 0px;
-  font-weight: lighter;
+.project .content .title{
+  font-size: 25px;
+  padding: 20px;
+  max-width: 340px;
+  text-align: center;
 }
-.project .content .description {
-  position: relative;
-  left: 10px;
+.project .content .description{
   font-size: 20px;
-  padding: 0px 30px 10px 0px;
+  padding-bottom: 15px;
+  max-width: 350px;
 }
 .project .content button {
-  padding: 10px 15px;
+  padding: 15px 20px;
   font-size: 18px;
-  background-color: rgba(98, 226, 75, 0.822);
+  background-color: rgba(255, 8, 0, 0.794);;
   color: white;
   outline: none;
   border: none;
   transition: 0.3s ease-in;
   cursor: pointer;
 }
-.project .content .buttons {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  padding: 20px 10px;
+.button {
+  --background: #275efe;
+  --text: #fff;
+  --font-size: 16px;
+  --duration: 0.44s;
+  --move-hover: -4px;
+  --shadow: 0 2px 8px -1px rgba(39, 94, 254, .32);
+  --shadow-hover: 0 4px 20px -2px rgba(39, 94, 254, .5);
+  --font-shadow: 16px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  line-height: 16px;
+  display: block;
+  outline: none;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transform: translateY(var(--y));
+  transition: transform 0.44s ease, box-shadow 0.44s ease;
 }
-.project .content .viewsourcecode {
-  background-color: rgba(255, 8, 0, 0.794);
+.button div {
+  display: flex;
+  overflow: hidden;
+  text-shadow: 0 var(--font-shadow) 0 #fff;
+}
+.button div span {
+  display: block;
+  backface-visibility: hidden;
+  font-style: normal;
+  transition: transform 0.44s ease;
+  transform: translateY(var(--m));
+}
+.button div span:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.button div span:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.button div span:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.button div span:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.button div span:nth-child(5) {
+  transition-delay: 0.25s;
+}
+.button div span:nth-child(6) {
+  transition-delay: 0.3s;
+}
+.button div span:nth-child(7) {
+  transition-delay: 0.35s;
+}
+.button div span:nth-child(8) {
+  transition-delay: 0.4s;
+}
+.button div span:nth-child(9) {
+  transition-delay: 0.45s;
+}
+.button div span:nth-child(10) {
+  transition-delay: 0.5s;
+}
+.button div span:nth-child(11) {
+  transition-delay: 0.55s;
+}
+.button:hover {
+  --y: var(--move-hover);
+  --shadow: var(--shadow-hover);
+}
+.button:hover span {
+  --m: calc(var(--font-size) * -1);
+}
+.button.reverse {
+  --font-shadow: calc(var(--font-size) * -1);
+}
+.button.reverse:hover span {
+  --m: calc(var(--font-size));
 }
 .blog-container{
   padding-bottom: 60px;
@@ -527,8 +628,12 @@ header nav ul a li {
   justify-content: center;
   width: 500px;
   color: rgb(255, 255, 255);
-  box-shadow: -6px 6px 10px rgba(0, 0, 0, 1),
-     6px -6px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: inset -3px -3px 0px rgba(0, 0, 0, 1);
+  overflow: hidden;
+}
+.blog img:hover{
+  transform: scale(1.03);
+  transition: all 3s ease-in-out;
 }
 .blogs a{
   text-decoration: none;
@@ -536,6 +641,8 @@ header nav ul a li {
 .blog img{
   width: 500px;
   height: 250px;
+  border-radius: 00% 00% 100% 00%/ 100% 200% 200% 200%;
+  transition: all 1s ease-out;
 }
 .blog .title{
   padding: 10px 15px;
@@ -880,7 +987,13 @@ footer p span {
     justify-content: center;
   }
   .project {
+    width: 320px;
+    height: 300px;
     margin-bottom: 40px;
+  }
+  .project .content .description{
+    max-width: 250px;
+    font-size: 18px;
   }
   .image {
     height: 200px;
@@ -926,83 +1039,4 @@ footer p span {
 }
 a{
   text-decoration: none;
-}
-.button {
-  --background: #275efe;
-  --text: #fff;
-  --font-size: 16px;
-  --duration: 0.44s;
-  --move-hover: -4px;
-  --shadow: 0 2px 8px -1px rgba(39, 94, 254, .32);
-  --shadow-hover: 0 4px 20px -2px rgba(39, 94, 254, .5);
-  --font-shadow: 16px;
-  font-family: 'Roboto';
-  font-weight: 500;
-  line-height: 16px;
-  display: block;
-  outline: none;
-  text-decoration: none;
-  font-size: 16px;
-  letter-spacing: 0.5px;
-  box-shadow: 0 2px 8px -1px rgba(39, 94, 254, .32);
-  transform: translateY(var(--y));
-  transition: transform 0.44s ease, box-shadow 0.44s ease;
-}
-.button div {
-  display: flex;
-  overflow: hidden;
-  text-shadow: 0 var(--font-shadow) 0 #fff;
-}
-.button div span {
-  display: block;
-  backface-visibility: hidden;
-  font-style: normal;
-  transition: transform 0.44s ease;
-  transform: translateY(var(--m));
-}
-.button div span:nth-child(1) {
-  transition-delay: 0.05s;
-}
-.button div span:nth-child(2) {
-  transition-delay: 0.1s;
-}
-.button div span:nth-child(3) {
-  transition-delay: 0.15s;
-}
-.button div span:nth-child(4) {
-  transition-delay: 0.2s;
-}
-.button div span:nth-child(5) {
-  transition-delay: 0.25s;
-}
-.button div span:nth-child(6) {
-  transition-delay: 0.3s;
-}
-.button div span:nth-child(7) {
-  transition-delay: 0.35s;
-}
-.button div span:nth-child(8) {
-  transition-delay: 0.4s;
-}
-.button div span:nth-child(9) {
-  transition-delay: 0.45s;
-}
-.button div span:nth-child(10) {
-  transition-delay: 0.5s;
-}
-.button div span:nth-child(11) {
-  transition-delay: 0.55s;
-}
-.button:hover {
-  --y: var(--move-hover);
-  --shadow: var(--shadow-hover);
-}
-.button:hover span {
-  --m: calc(var(--font-size) * -1);
-}
-.button.reverse {
-  --font-shadow: calc(var(--font-size) * -1);
-}
-.button.reverse:hover span {
-  --m: calc(var(--font-size));
 }
