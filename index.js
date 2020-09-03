@@ -37,17 +37,29 @@ form.addEventListener('submit', function (e) {
 var hamgurger = document.querySelector('.hamburger');
 var hamgurger_container = document.querySelector('.hamburger-container');
 var navlinks = document.querySelector('.nav-links');
+var link = document.querySelectorAll('.nav-links a');
+
 var menuOpen = false;
+
+for(let i=0;i<link.length;i++){
+link[i].addEventListener('click', () =>{
+  navlinks.classList.remove('open');
+  hamgurger.classList.remove('open');
+})
+}
 
 hamgurger.addEventListener('click', () => {
   if (!menuOpen) {
     hamgurger.classList.add('open');
     navlinks.classList.add('open');
     menuOpen = true;
+    navlinks.style.animation='hue 10s linear 1s infinite';
   } else {
     hamgurger.classList.remove('open');
     navlinks.classList.remove('open');
     menuOpen = false;
+    navlinks.style.animation='none';
+
   }
 });
 document.querySelectorAll('.button').forEach(button => button.innerHTML = '<div><span>' + button.textContent.trim().split('').join('</span><span>') + '</span></div>');
