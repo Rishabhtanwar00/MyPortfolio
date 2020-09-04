@@ -48,12 +48,13 @@ link[i].addEventListener('click', () =>{
 })
 }
 
+
 hamgurger.addEventListener('click', () => {
   if (!menuOpen) {
     hamgurger.classList.add('open');
     navlinks.classList.add('open');
     menuOpen = true;
-    navlinks.style.animation='hue 10s linear 1s infinite';
+    navlinks.style.animation='hue 20s linear 1s infinite';
   } else {
     hamgurger.classList.remove('open');
     navlinks.classList.remove('open');

@@ -28,11 +28,13 @@ header nav ul {
   align-items: center;
   justify-content: flex-end;
   list-style: none;
+  box-sizing: border-box;
 }
 header nav ul a {
   color: #ffffff;
   text-decoration: none;
   font-size: 28px;
+  box-sizing: border-box;
 }
 header nav ul a:hover {
   color: #000000;
@@ -266,6 +268,98 @@ header nav ul a li {
 .about-container .qualities .quality img {
   height: 80px;
   width: 80px;
+  /* animation: shake 2s linear infinite; */
+}
+.quality:nth-child(1):hover img{
+  animation: shake 2s linear;
+  animation-iteration-count: 4;
+}
+.quality:nth-child(2):hover img{
+  animation: scaling 2s linear;
+  animation-iteration-count: 4;
+}
+.quality:nth-child(3):hover img{
+  animation: shakeY 2s linear;
+  animation-iteration-count: 4;
+}
+.quality:nth-child(4):hover img{
+  animation: rotation 2s linear;
+  animation-iteration-count: 2;
+}
+@keyframes shake{
+  0%{
+    transform: translateX(0px);
+  }
+  10%{
+    transform: translateX(6px);
+  }
+  20%{
+    transform: translateX(0px);
+  }
+  30%{
+    transform: translateX(3px);
+  }
+  40%{
+    transform: translateX(0px);
+  }
+  50%{
+    transform: translateX(0.5px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
+@keyframes shakeY{
+  0%{
+    transform: translateY(0px);
+  }
+  10%{
+    transform: translateY(-4px);
+  }
+  20%{
+    transform: translateY(0px);
+  }
+  30%{
+    transform: translateY(-2px);
+  }
+  40%{
+    transform: translateY(0px);
+  }
+  50%{
+    transform: translateY(-0.5px);
+  }
+  100%{
+    transform: translateY(0px);
+  }
+}
+@keyframes rotation{
+  0%{
+    transform: rotate(0deg);
+  }
+  50%{
+    transform: rotate(180deg) scale(0.6);
+  }
+  100%{
+    transform: rotate(360deg) scale(1);
+
+  }
+}
+@keyframes scaling{
+  0%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(1.1);
+  }
+  50%{
+    transform: scale(0.8);
+  }
+  75%{
+    transform: scale(1.05);
+  }
+  100%{
+    transform: scale(1);
+  }
 }
 .about-container .qualities .quality h3 {
   font-weight: normal;
@@ -306,6 +400,7 @@ header nav ul a li {
   left: 30px;
   bottom: 10px;
 }
+
 .about {
   display: flex;
   flex-direction: column;
@@ -545,8 +640,12 @@ header nav ul a li {
   max-width: 340px;
   text-align: center;
 }
+.project .content .technology{
+  padding: 3px 5px;
+  margin-bottom: 5px;
+}
 .project .content .description{
-  font-size: 20px;
+  font-size: 18px;
   padding-bottom: 15px;
   max-width: 350px;
 }
@@ -972,8 +1071,8 @@ footer p span {
   }
   .nav-links.open {
     opacity: 1;
-    transition: 0.3s all ease-in;
-    clip-path: circle(500px at 50% 50%);
+    transition: 0.7s all ease-in;
+    clip-path: circle(800px at 50% 50%);
   }
   .nav-links {
     clip-path: circle(0px at 50% 50%);
@@ -985,17 +1084,25 @@ footer p span {
     width: 100%;
     top: -70px;
     height: 100vh;
-    transition: 0.3s all ease-in-out;
+    transition: 0.7s all ease-in-out;
     background: linear-gradient(to left, #d3d923, rgb(255, 0, 0));
     z-index: 1;
 
+  }
+  @keyframes lefttranslate{
+    from{
+      transform: translateX(-1000px);
+    }
+    to{
+      transform: translateX(0px);
+    }
   }
   @keyframes hue{
     from{
       filter: hue-rotate(0deg);
     }
     to{
-      filter: hue-rotate(800deg);
+      filter: hue-rotate(360deg);
     }
   }
   .intro {
@@ -1049,9 +1156,13 @@ footer p span {
     height: 300px;
     margin-bottom: 40px;
   }
+  .project .content .technology{
+    right: 0;
+  }
   .project .content .description{
     max-width: 250px;
     font-size: 18px;
+    left: 0;
   }
   .image {
     height: 200px;
