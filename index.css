@@ -752,51 +752,96 @@ header nav ul a li {
   margin: 60px 0px 50px 10vw;
 }
 .blog{
+  width: 500px;
+  height: 350px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: inset 4px 4px rgba(0, 0, 0, 1);
+}
+.blog span{
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  transition: all 1s;
+  border-radius: 5px;
+}
+.blog:nth-child(1) span{
+  background-image: url('./images/nodejs.png');
+}
+.blog:nth-child(2) span{
+  background-image: url('./images/pythoncover1.png');
+}
+.blog span:nth-child(1){
+  width: 25%;
+  z-index: 6;
+  transition-delay: 0s;
+}
+.blog span:nth-child(2){
+  width: 50%;
+  z-index: 5;
+  transition-delay: 0.2s;
+}
+.blog span:nth-child(3){
+  width: 75%;
+  z-index: 4;
+  transition-delay: 0.4s;
+}
+.blog span:nth-child(4){
+  width: 100%;
+  z-index: 3;
+  transition-delay: 0.6s;
+}
+.blog:hover span{
+  transform: translateY(-100%);
+}
+.blog:hover span:nth-child(1){
+  transition-delay: 0.6s;
+}
+.blog:hover span:nth-child(2){
+  transition-delay: 0.4s;
+}
+.blog:hover span:nth-child(3){
+  transition-delay: 0.2s;
+}
+.blog:hover span:nth-child(4){
+  transition-delay: 0s;
+}
+.blog .content{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  width: 500px;
-  color: rgb(255, 255, 255);
-  box-shadow: inset -3px -3px 0px rgba(0, 0, 0, 1);
-  overflow: hidden;
+  height: 100%;
+  padding: 0 30px;
+  text-transform: uppercase;
+  text-align: center;
+  transform: translateY(100%);
+  transition: all 1.0s linear 0.3s;
+  color: #000;
 }
-.blog img:hover{
-  transform: scale(1.03);
-  transition: all 3s ease-in-out;
+.blog .content p{
+  margin:20px 0 30px ;
+  color: #000;
 }
-.blogs a{
+.blog .content a{
   text-decoration: none;
-}
-.blog img{
-  width: 500px;
-  height: 250px;
-  border-radius: 00% 00% 100% 00%/ 100% 200% 200% 200%;
-  transition: all 1s ease-out;
-}
-.blog .title{
-  padding: 10px 15px;
-  letter-spacing: 2px;
-  color: rgb(0, 0, 0);
-}
-.blog p{
-  padding: 5px 15px;
-  font-size: 18px;
   color: #000;
-  font-weight: 600;
+  padding: 10px 20px;
+  border: 3px solid #000;
+  transition: all 0.3s ease-in;
+  font-weight: bolder;
 }
-.blog .simpleline{
-  margin: 5px 15px;
-  width: 80px;
-  height: 4px;
-  background: rgb(0, 0, 0);
-  opacity: 0.8;
+.blog .content a:hover{
+  color: #fff;
+  background: #000;
+  transition: all 0.3s ease-in;
 }
-.blog .description{
-  padding: 5px 15px 15px ;
-  letter-spacing: 1px;
-  color: #000;
-  font-weight: normal;
+.blog:hover .content{
+  transform: translateY(0);
 }
 
 .contact-container {
@@ -1179,9 +1224,11 @@ footer p span {
   .blog{
     width: 320px;
   }
-  .blog img{
-    width: 100%;
-    height: 200px;
+  .blog:nth-child(1) span{
+    background-image: url('./images/nodejs1.png');
+  }
+  .blog:nth-child(2) span{
+    background-image: url('./images/pythoncover2.png');
   }
   form {
     height: 400px;
