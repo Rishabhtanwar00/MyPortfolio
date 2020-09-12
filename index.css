@@ -610,6 +610,11 @@ header nav ul a li {
   inset -6px 6px 0px rgba(0, 0, 0, 0.5);
 }
 .project:nth-child(5):hover{
+  border-radius: 200% 200% 200% 200%/ 200% 200% 200% 200%;
+  box-shadow: inset -6px -6px 0px rgba(0, 0, 0, 1),
+    inset 6px -6px 0px rgba(0, 0, 0, 0.5);
+}
+.project:nth-child(6):hover{
   border-radius: 200% 200% 00% 200%/ 200% 200% 200% 200%;
   box-shadow: inset 6px -6px 0px rgba(0, 0, 0, 1),
   inset 6px 6px 0px rgba(0, 0, 0, 0.5);
