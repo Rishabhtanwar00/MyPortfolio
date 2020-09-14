@@ -143,8 +143,8 @@ header nav ul a li {
 .image {
   height: 300px;
   width: 300px;
-  animation: upward 3s ease-in 0s forwards;
-  opacity: 0;
+  /* animation: upward 3s ease-in 0s forwards; */
+  /* opacity: 0; */
 }
 @keyframes upward{
   0%{
@@ -467,6 +467,7 @@ header nav ul a li {
 .outer-bar,
 .inner-bar {
   height: 15px;
+  border-radius: 10px;
 }
 .outer-bar {
   margin-top: 20px;
@@ -518,6 +519,11 @@ header nav ul a li {
 }
 .inner-bar-60 {
   width: 60%;
+  background:rgb(226, 211, 0);
+  color:rgb(226, 211,0);
+}
+.inner-bar-70{
+  width: 70%;
   background: rgb(22, 175, 2);
   color: rgb(22, 175, 2);
 }
