@@ -20,6 +20,7 @@ let container = document.querySelector(
 let form = document.querySelector('#form');
 form.addEventListener('submit', function (e) {
   e.preventDefault();
+  form.reset();
   container.innerHTML = `
     <div class="submit-container">
       <div class=onsubmit>

@@ -679,6 +679,10 @@ header nav ul a li {
   transition: 0.3s ease-in;
   cursor: pointer;
 }
+.project .content button:active{
+  transform: scale(0.8);
+  transition: 0.3s all ease-in-out;
+}
 .button {
   --background: #275efe;
   --text: #fff;
@@ -854,6 +858,10 @@ header nav ul a li {
   border: 3px solid #000;
   transition: all 0.3s ease-in;
   font-weight: bolder;
+}
+.blog .content a:active{
+  transform: scale(0.8);
+  transition: 0.3s all ease-in-out;
 }
 .blog .content a:hover{
   color: #fff;
